@@ -89,3 +89,21 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+int
+sys_runtime(void)
+{
+	return runtime();
+}
+
+int
+sys_date(void)
+{
+	return date();
+}
+
+int
+sys_numinv(void)
+{
+	return numinv();
+}
