@@ -13,8 +13,8 @@ main(int argc, char *argv[])
 		//ticks = atoi(argv[1]);
 	}
 
-	int time = uptime();
-	printf(2, "%d\n", time);
+	int time = 60*uptime()/ticks;
+
 	if(time < 60)
 	{
 		printf(2, "Time: %d\n", time);
@@ -34,6 +34,5 @@ main(int argc, char *argv[])
 			printf(2, "Time: %d:%d:%d\n", hours, minutes, seconds);
 		} 
 	}
-	printf(2, "uptime working %d %d\n", ticks, time);
 	exit();
 }

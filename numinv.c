@@ -5,19 +5,18 @@
 int
 main(int argc, char *argv[])
 {
- int nsyscall = -1;
- if (argc == 2) {
-  nsyscall = atoi(argv[1]);
- }
- if (nsyscall == -1) {
-  // mostrar todas las llamadas al sistema
-  // con su correspondiente numero de invocaciones
- } else {
-  // mostrar la llamada al sistema dada en nsyscall
-  // con su correspondiente numero de invocaciones
- }
-
-	printf(2, "numinv working\n");
+	int nsyscall = -1;
+	if (argc == 2) {
+	nsyscall = atoi(argv[1]);
+	}
+	if (nsyscall == -1) {
+		for(int i=1; i<23; i++)
+		{
+  			//printAllSyscalls(i);
+		}
+	} else {
+		//printSyscall(nsyscall);
+	}
  exit();
 }
 
