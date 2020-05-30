@@ -6,6 +6,6 @@
 int
 main(int argc, char *agrv[])
 {
-	numinv();
+	printf(2, "numinv working\n");
 	exit();
 }
