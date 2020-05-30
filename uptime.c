@@ -1,23 +1,11 @@
 #include "types.h"
 #include "stat.h"
 #include "user.h"
+#include "fcntl.h"
 
 int
-main(int argc, char *argv[])
+main(int argc, char *agrv[])
 {
- int nsyscall = -1;
- if (argc == 2) {
-  nsyscall = atoi(argv[1]);
- }
- if (nsyscall == -1) {
-  // mostrar todas las llamadas al sistema
-  // con su correspondiente numero de invocaciones
- } else {
-  // mostrar la llamada al sistema dada en nsyscall
-  // con su correspondiente numero de invocaciones
- }
-
-	printf(2, "Uptime working\n");
- exit();
+	printf(2, "uptime working\n");
+	exit();
 }
-
