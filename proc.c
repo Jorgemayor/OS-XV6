@@ -531,31 +531,4 @@ procdump(void)
     }
     cprintf("\n");
   }
-}
-
-int
-runtime()
-{
-	sti();
-
-	cprintf("runtime working\n");
-	return 22;
-}
-
-int
-date()
-{
-	sti();
-
-	cprintf("date working\n");
-	return 23;
-}
-
-int
-numinv()
-{
-	sti();
-
-	cprintf("numinv working\n");
-	return 24;
-}
+}	

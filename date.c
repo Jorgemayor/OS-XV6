@@ -1,11 +1,19 @@
 #include "types.h"
-#include "stat.h"
 #include "user.h"
-#include "fcntl.h"
+#include "date.h"
 
 int
-main(int argc, char *agrv[])
+main(int argc, char *argv[])
 {
-	date();
+  struct rtcdate r;
+
+  if (date(&r)) {
+    printf(2, "date failed\n");
+    exit();
+  }
+
+  printf(2, "Date: %d/%d/%d Time: %d:%d:%d\n", r.day, r.month, r.year, r.hour, r.minute, r.second);
+
 	exit();
 }
+

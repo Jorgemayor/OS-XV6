@@ -93,17 +93,20 @@ sys_uptime(void)
 int
 sys_runtime(void)
 {
-	return runtime();
+	return 0;
 }
 
 int
 sys_date(void)
 {
-	return date();
+	struct rtcdate* r;
+	argptr(0, (void*)(&r), sizeof(*r));
+	cmostime(r);
+	return 0;
 }
 
 int
 sys_numinv(void)
 {
-	return numinv();
+	return 0;
 }
