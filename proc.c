@@ -538,7 +538,7 @@ runtime()
 {
 	sti();
 
-	cprintf("runtime working");
+	cprintf("runtime working\n");
 	return 22;
 }
 
@@ -547,7 +547,7 @@ date()
 {
 	sti();
 
-	cprintf("date working");
+	cprintf("date working\n");
 	return 23;
 }
 
@@ -556,6 +556,6 @@ numinv()
 {
 	sti();
 
-	cprintf("numinv working");
+	cprintf("numinv working\n");
 	return 24;
 }
