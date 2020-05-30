@@ -23,7 +23,6 @@ int getpid(void);
 char* sbrk(int);
 int sleep(int);
 int uptime(void);
-int runtime(void);
 int date(struct rtcdate *time);
 int numinv(void);
 
