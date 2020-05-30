@@ -187,7 +187,7 @@ int             copyout(pde_t*, uint, void*, uint);
 void            clearpteu(pde_t *pgdir, char *uva);
 
 // extra
-int		uptime(void);		
+int		runtime(void);		
 int		date(void);
 int		numinv(void);
 
