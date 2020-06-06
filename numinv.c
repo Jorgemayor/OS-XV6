@@ -10,7 +10,7 @@ main(int argc, char *argv[])
 		nsyscall = atoi(argv[1]);
 	}
 
-	if(nsyscall > 24 || nsyscall == 0 || nsyscall < -1){
+	if(nsyscall >= 24 || nsyscall == 0 || nsyscall < -1){
 		printf(1, "Syscall number %d not supported\n", nsyscall);
 	} else {
 		numinv(nsyscall);
