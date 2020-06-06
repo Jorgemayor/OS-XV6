@@ -12,7 +12,7 @@ main(int argc, char *argv[])
     exit();
   }
 
-  printf(2, "Date: %d/%d/%d Time: %d:%d:%d\n", r.day, r.month, r.year, r.hour, r.minute, r.second);
+  printf(2, "Date: %d/%d/%d Time: %d:%d:%d UTC\n", r.day, r.month, r.year, r.hour, r.minute, r.second);
 
 	exit();
 }
