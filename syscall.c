@@ -132,27 +132,49 @@ static int (*syscalls[])(void) = {
 [SYS_numinv]  sys_numinv,
 };
 
-int numSyscalls[23];
+const char* syscallNames[] = {
+	"fork", "exit", "wait", "pipe", "read", "kill",
+	"exec", "fstat", "chdir", "dup", "getpid",
+	"sbrk", "sleep", "uptime", "open", "write",
+	"mknod", "unlink", "link", "mkdir", "close",
+	"date", "numinv"
+};
+
+int syscallsCount[] = {
+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	0, 0, 0};
+
+const int numSyscalls = NELEM(syscalls);
 
 void
-printSysCall(int n)
+printSyscall(int n)
 {
-	cprintf("Times called: %d", numSyscalls[n-1]);
+	cprintf("%s called %d times\n", syscallNames[n-1], syscallsCount[n-1]);
+}
+
+void
+printAllSyscalls()
+{
+	for(int i=1; i<numSyscalls; i++)
+	{
+		printSyscall(i);;
+	}
 }
 
 void
 syscall(void)
 {
-  int num;
-  struct proc *curproc = myproc();
+	int num;
+	struct proc *curproc = myproc();
 
-  num = curproc->tf->eax;
-  if(num > 0 && num < NELEM(syscalls) && syscalls[num]) {
-    curproc->tf->eax = syscalls[num]();
-	numSyscalls[num-1]++;
-  } else {
-    cprintf("%d %s: unknown sys call %d\n",
-            curproc->pid, curproc->name, num);
-    curproc->tf->eax = -1;
-  }
+	num = curproc->tf->eax;
+	if(num > 0 && num < NELEM(syscalls) && syscalls[num]) {
+		curproc->tf->eax = syscalls[num]();
+		syscallsCount[num-1]++;
+	} else {
+    	cprintf("%d %s: unknown sys call %d\n",
+        curproc->pid, curproc->name, num);
+    	curproc->tf->eax = -1;
+	}
 }

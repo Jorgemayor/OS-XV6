@@ -91,12 +91,6 @@ sys_uptime(void)
 }
 
 int
-sys_runtime(void)
-{
-	return 0;
-}
-
-int
 sys_date(void)
 {
 	struct rtcdate* r;
@@ -108,5 +102,13 @@ sys_date(void)
 int
 sys_numinv(void)
 {
+	int n;
+	argint(0, &n);
+	
+	if(n == -1) {
+		printAllSyscalls();
+	} else {
+		printSyscall(n);
+	}
 	return 0;
 }
